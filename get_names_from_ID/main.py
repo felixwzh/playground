@@ -24,11 +24,14 @@ def get_names(ID_list):
             h1user = foundH1user.group("h1user")
             op.write(h1user)
             op.write("\n")
+        else:
+            op.write('Not Found\n')
+
         if i%20==0:
             print i
 
 
-ID_list=get_ID_list(file_path='./ID.txt')
+ID_list=get_ID_list('./ID.txt')
 op=open("./names.txt","w")
 name_list=get_names(ID_list=ID_list)
 op.close()
