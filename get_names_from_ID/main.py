@@ -14,7 +14,6 @@ def get_ID_list(file_path):
 
 def get_names(ID_list):
     lenth=len(ID_list)
-    name_list=[]
     for i in range(0,lenth):
         userMainUrl = "http://z.seiee.com/scores/search?student_no="+ID_list[i]
         req = urllib2.Request(userMainUrl)
@@ -29,7 +28,7 @@ def get_names(ID_list):
             print i
 
 
-ID_list=get_ID_list('./ID.txt')
+ID_list=get_ID_list(file_path='./ID.txt')
 op=open("./names.txt","w")
 name_list=get_names(ID_list=ID_list)
 op.close()
